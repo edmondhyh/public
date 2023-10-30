@@ -13,6 +13,18 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+#  mvc:
+#    view:
+#      prefix: /templates/
+#    servlet:
+#      path: /
+#  web:
+#    resources:
+#      static-locations: classpath:/static/
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    cache: false
 
 server:
   error:

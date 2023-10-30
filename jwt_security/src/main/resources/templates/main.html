@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+<div class="container">
+    <h2>Summary</h2>
+    <div class="button-container">
+        <form action="/register" method="post">
+          <button id="register-btn" type="submit">Generate Token</button>
+        </form>
+    </div>
+
+    <div class="token-input-container">
+      <label for="token">
+        <input type="text" id="token" name="token" required>
+        <button id="read-info-btn">Read Info by Token</button>
+      </label>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Account Token</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Account Info</h2>
+        <form action="/page/register" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div style="height: 10px"></div>
+            <label for="role">
+                Role:
+                <select id="role" name="role">
+                    <option value="user">USER</option>
+                    <option value="admin">ADMIN</option>
+                </select>
+            </label>
+            <button type="submit">Register</button>
+        </form>
+
+        <form action="/" method="GET">
+            <button>Back To Main</button>
+        </form>
+    </div>
+
+    <div th:if="${registrationResult}">
+        <p th:text="${registrationResult}"></p>
+    </div>
+
+</body>
+</html>
