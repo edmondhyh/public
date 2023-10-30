@@ -23,3 +23,8 @@ h2 {
 .token-input-container label {
     margin-right: 10px;
 }
+
+.user-container {
+    display: flex;
+    align-items: center;
+}

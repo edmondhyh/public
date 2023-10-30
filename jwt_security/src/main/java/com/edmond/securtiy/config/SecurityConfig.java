@@ -20,7 +20,6 @@ public class SecurityConfig {
 
     private static final String[] WHITE_LIST_URL = {
             "api/register",
-            "view/**",
             "css/**",
             "/**",
             "page/**"

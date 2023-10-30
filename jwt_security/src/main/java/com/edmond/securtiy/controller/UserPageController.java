@@ -26,7 +26,7 @@ public class UserPageController {
     private final JwtService jwtService;
 
     @PostMapping("/register")
-    public String register(@ModelAttribute("registrationResult") String registrationResult, @RequestBody RegisterDto request, Model model){
+    public String register(@ModelAttribute RegisterDto request, Model model){
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
@@ -34,29 +34,25 @@ public class UserPageController {
                 .role(Role.valueOf(request.getRole().toUpperCase()))
                 .build();
 
-        String resultMessage = authenticationService.register(user).toString();
+        JwtTokenDto jwtTokenDto = authenticationService.register(user);
 
-        model.addAttribute("registrationResult", resultMessage);
+        model.addAttribute("token", jwtTokenDto.getToken());
+        model.addAttribute("expiration", jwtTokenDto.getExpiration());
 
         return "register";
     }
 
-//    @GetMapping("/alluser")
-//    public ResponseEntity<Object> getAllUser(@RequestHeader(HttpHeaders.AUTHORIZATION) String authorizationHeader) {
-//        String token = null;
-//        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-//            token = authorizationHeader.substring(7);
-//        }
-//
-//        if (token != null) {
-//            String role = jwtService.extractUserRole(token);
-//            if (role.equals(Role.ADMIN.toString())) {
-//                List<User> userList = userService.findUserList();
-//                return ResponseEntity.ok(userList);
-//            }
-//        }
-//
-//        return ResponseEntity.ok("Invalid or missing token");
-//
-//    }
+    @GetMapping("/user")
+    public String register(@RequestParam("token") String token, Model model){
+        String role = jwtService.extractUserRole(token);
+        if (role.equals(Role.ADMIN.toString())){
+            List<User> userList = userService.findUserList();
+            model.addAttribute("user", userList.toString());
+        }else{
+            String email = jwtService.extractUserEmail(token);
+            User user = userService.findByEmail(email);
+            model.addAttribute("user", user.toString());
+        }
+        return "main";
+    }
 }

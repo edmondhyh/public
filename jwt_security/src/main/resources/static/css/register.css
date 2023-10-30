@@ -17,6 +17,13 @@ form {
     border-radius: 5px;
 }
 
+table {
+    /*width: 300px;*/
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 button {
     margin-top: 10px;
 }

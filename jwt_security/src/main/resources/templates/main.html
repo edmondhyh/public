@@ -15,11 +15,18 @@
     </div>
 
     <div class="token-input-container">
-      <label for="token">
-        <input type="text" id="token" name="token" required>
-        <button id="read-info-btn">Read Info by Token</button>
-      </label>
+        <form action="/page/user" method="GET">
+            <input type="text" id="token" name="token" required>
+            <button id="read-info-btn">Read Info by Token</button>
+        </form>
     </div>
+
+    <div class="user-container">
+        <div th:if="${user}">
+            <p th:text="${user}"></p>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>

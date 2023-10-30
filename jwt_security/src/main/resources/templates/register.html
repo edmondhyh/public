@@ -34,11 +34,16 @@
         <form action="/" method="GET">
             <button>Back To Main</button>
         </form>
-    </div>
 
-    <div th:if="${registrationResult}">
-        <p th:text="${registrationResult}"></p>
-    </div>
 
+        <div th:if="${token}">
+            Token: <p th:text="${token}"></p>
+        </div>
+
+        <div th:if="${expiration}">
+            Expiration: <p th:text="${expiration}"></p>
+        </div>
+
+    </div>
 </body>
 </html>
