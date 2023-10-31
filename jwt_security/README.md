@@ -2,15 +2,15 @@
 In this project, I will demonstrate how to integrate JWT and SpringBoot Security to do CRUD by the user role.
 
 ## Setting
-- Create PostgreSQL database named with <span style="color: orange;">jwt_security</span>
-- OR change the config setting <span style="color: orange;">application.yml</span> file
+    - Create PostgreSQL database named with <span style="color: orange;">jwt_security</span>
+    - OR change the config setting <span style="color: orange;">application.yml</span> file
 ![Screenshot 2023-10-31 at 23.14.52.png](README_Picture%2FScreenshot%202023-10-31%20at%2023.14.52.png)
 
 ## Introduction - function
 ## Generate user token (POST)
     - user will retrieve their token and know the expiration
     - Role: USER/ADMIN
-![Screensh ot 2023-10-31 at 23.23.58.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fw9%2F4q37w8rs4txcy89mf9gfnjvh0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_EKWFKB%2FScreenshot%202023-10-31%20at%2023.23.58.png)
+![Screenshot 2023-10-31 at 23.23.58.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fw9%2F4q37w8rs4txcy89mf9gfnjvh0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_EKWFKB%2FScreenshot%202023-10-31%20at%2023.23.58.png)
 
 ## Get all user (GET)
     - use ADMIN token, otherwise you can't review all the user
