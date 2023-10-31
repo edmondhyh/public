@@ -2,8 +2,8 @@
 In this project, I will demonstrate how to integrate JWT and SpringBoot Security to do CRUD by the user role.
 
 ## Setting
-    - Create PostgreSQL database named with <span style="color: orange;">jwt_security</span>
-    - OR change the config setting <span style="color: orange;">application.yml</span> file
+    - Create PostgreSQL database named with jwt_security
+    - OR change the config setting application.yml file
 ![Screenshot 2023-10-31 at 23.14.52.png](README_Picture%2FScreenshot%202023-10-31%20at%2023.14.52.png)
 
 ## Introduction - function
