@@ -35,4 +35,12 @@ public class UserService {
             throw new IllegalStateException("User exist!");
         }
     }
+
+    public void updateUser(User user){
+        userRepo.save(user);
+    }
+
+    public void deleteUserByEmail(String email){
+        userRepo.deleteByEmail(email);
+    }
 }

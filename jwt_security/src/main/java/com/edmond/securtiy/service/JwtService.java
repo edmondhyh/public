@@ -6,7 +6,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
@@ -74,7 +73,7 @@ public class JwtService {
         return (String) claims.get("role");
     }
 
-    private Claims extractAllClaims(String token){
+    public Claims extractAllClaims(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()
