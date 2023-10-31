@@ -10,8 +10,7 @@ In this project, I will demonstrate how to integrate JWT and SpringBoot Security
 ## Generate user token (POST)
     - user will retrieve their token and know the expiration
     - Role: USER/ADMIN
-![Screenshot 2023-10-31 at 23.23.58.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fw9%2F4q37w8rs4txcy89mf9gfnjvh0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_EKWFKB%2FScreenshot%202023-10-31%20at%2023.23.58.png)
-
+![Screenshot 2023-10-31 at 23.41.28.png](README_Picture%2FScreenshot%202023-10-31%20at%2023.41.28.png)
 ## Get all user (GET)
     - use ADMIN token, otherwise you can't review all the user
 ![Screenshot 2023-10-31 at 23.29.42.png](README_Picture%2FScreenshot%202023-10-31%20at%2023.29.42.png)
@@ -24,7 +23,7 @@ In this project, I will demonstrate how to integrate JWT and SpringBoot Security
 ## Update user (PUT)
     - pass your email and token
     - only allow to update name and password
-![Screenshot 2023-10-31 at 23.34.15.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fw9%2F4q37w8rs4txcy89mf9gfnjvh0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_H5vl4L%2FScreenshot%202023-10-31%20at%2023.34.15.png)
+![Screenshot 2023-10-31 at 23.41.57.png](README_Picture%2FScreenshot%202023-10-31%20at%2023.41.57.png)
 
 ## Delete user (DELETE)
     - pass your email and token
