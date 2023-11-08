@@ -29,6 +29,10 @@ In this project, I will demonstrate how to integrate JWT and SpringBoot Security
     - pass your email and token
 ![Screenshot 2023-10-31 at 23.35.46.png](README_Picture%2FScreenshot%202023-10-31%20at%2023.35.46.png)
 
+## OpenAPI/Swagger UI
+    http://localhost:8080/swagger-ui.html
+![Screenshot 2023-11-08 at 22.59.56.png](README_Picture%2FScreenshot%202023-11-08%20at%2022.59.56.png)
+
 ## Other
     - Clone the DEV version to use partial function in the front-end page
     - http://localhost:8080/
