@@ -8,6 +8,11 @@ import com.edmond.securtiy.service.AuthenticationService;
 import com.edmond.securtiy.service.JwtService;
 import com.edmond.securtiy.service.UserService;
 import io.micrometer.common.util.StringUtils;
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +23,28 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
+@Tag(name = "User")
+//@SecurityRequirement(name = "bearerAuth")
 public class UserController {
 
     private final AuthenticationService authenticationService;
     private final UserService userService;
     private final JwtService jwtService;
 
+    @Operation(
+            description = "create a new user",
+            summary = "generate an unique token for permissions",
+            responses = {
+                    @ApiResponse(
+                            description = "Success",
+                            responseCode = "200"
+                    ),
+                    @ApiResponse(
+                            description = "Duplicated email",
+                            responseCode = "403"
+                    )
+            }
+    )
     @PostMapping("/register")
     public ResponseEntity<JwtTokenDto> register(@RequestBody RegisterDto request){
         User user = User.builder()
@@ -36,6 +57,7 @@ public class UserController {
         return ResponseEntity.ok(authenticationService.register(user));
     }
 
+//    @Hidden
     @GetMapping("/all")
     public ResponseEntity<Object> findAllUser(@RequestHeader(HttpHeaders.AUTHORIZATION) String authorizationHeader) {
         String token = getToken(authorizationHeader);
