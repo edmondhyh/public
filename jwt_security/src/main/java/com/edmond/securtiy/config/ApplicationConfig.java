@@ -23,14 +23,25 @@ public class ApplicationConfig {
         return userRepo::findByEmail;
     }
 
+    /**
+     * responsible for checking the credentials (such as username and password)
+     * @return
+     */
     @Bean
     public AuthenticationProvider authenticationProvider() {
+        // authenticates users against a database
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
 
+    /**
+     * central component responsible for authenticating a user
+     * @param config
+     * @return
+     * @throws Exception
+     */
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
